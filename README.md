@@ -166,7 +166,7 @@ Orbit should prvide a priority system to help users distinguish between urgent a
 Suggested priority levels:
 
 | Priority | Description  |
-|--------|----------|-------------|
+|--------|----------------|
 | `Critical` | Requires immediate attention |
 | `High` | Important and time sensitive |
 | `Medium` | Should be completed soon |
