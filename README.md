@@ -2,15 +2,35 @@
 
 A countdown task and project management application.
 
-Orbit is a productivity and project management platform/website designed to help you organise your work, manage deadlines, track progress and stay focused on what is important.
+Orbit is a productivity platform/website designed to help you organise your work, manage deadlines, track progress and stay focused on what's important.
 
-The idea behind Orbit is simple: brin your tasks, projects, deadlines and schedules together in one organised workspace. Every task has a purpose, every deadline has a countdown and every project has a clear direction.
+The idea behind Orbit is simple: bring your tasks, projects, deadlines, and schedules, together in one organised workspace. Every task has a purpose, every deadline has a countdown and every project has a clear direction.
 
 Orbit aims to make managing your workload easier, whether you're organising personal tasks, managing multiple projects, working with a team or planning something months in advance.
 
-# What is Orbit?
+---
 
-Orbit is ax all-in-one task management and project planning application built around time, organisation and productivity.
+## Table of Contents
+
+- [What is Orbit?](#what-is-orbit)
+- [MVP (Version 1)](#mvp-version-1)
+- [Tech Stack](#tech-stack)
+- [Running Locally](#running-locally)
+- [Roadmap](#roadmap)
+  - [1. Countdown System](#1-countdown-system)
+  - [2. Task Management](#2-task-management)
+  - [3. Project Management](#3-project-management)
+  - [4. Dashboard](#4-dashboard)
+  - [5. Calendar and Scheduling](#5-calendar-and-scheduling)
+  - [6. Priorities and Urgency](#6-priorities-and-urgency)
+- [Completed Features](#completed-features)
+
+---
+
+
+## What is Orbit?
+
+Orbit is an all-in-one task management and project planning application built around time, organisation and productivity.
 
 Unlike a traditional to-do list, Orbit focuses on connecting tasks to projects, deadlines and progress. 
 
@@ -20,22 +40,91 @@ You should be able to open Orbit and immediately understand:
 - What you're currently working on
 - How much time is left before a deadline
 - Which projects are progressing
-- Which tasks are overdu
+- Which tasks are overdue
 - What needs your attention next
 - How much work you've completed
 
-Orbit is intended to become a central workspace for managing everything from small daily tasks to large, long term projects.
+Orbit is intended to become a central workspace for managing everything from small daily tasks to large, long-term projects.
 
+**Who is it for?** Orbit is a *personal* tool. It is designed for one person managing their own work (for example, a student balancing homework and personal projects). Team features and shared workspaces are not part of the plan for version 1.
 
-# Core Features 
+## MVP (Version 1)
+ 
+The full vision for Orbit is large. To avoid trying to build everything at once, Version 1 focuses on the smallest useful version of the product: **a simple personal task list with live countdowns.**
+ 
+If Orbit can do everything below, Version 1 is finished.
 
-The following features represent the planned direction of Orbit They are not necessarily implemented yet. 
+### User stories
+ 
+- As a user, I want to **add a task with a deadline** so that I can see how much time I have left.
+- As a user, I want to **see a live countdown** on each task so that I know what is urgent without doing the maths myself.
+- As a user, I want to **mark a task as complete** so that I can see my progress.
+- As a user, I want **overdue tasks to stand out** so that I never miss them.
+- As a user, I want my tasks to **still be there when I come back** so that I don't lose my work.
 
-## 1. Countdown System
+### In scope for Version 1
+ 
+- [ ] Add a task with a title, due date and time, and priority
+- [ ] Edit a task
+- [ ] Delete a task
+- [ ] Mark a task as complete (and undo it)
+- [ ] Live countdown for each task (days, hours, minutes and seconds) that updates automatically
+- [ ] Overdue tasks are clearly highlighted
+- [ ] Tasks are sorted by the nearest deadline
+- [ ] Priority levels (Critical, High, Medium, Low) are visually distinguishable
+- [ ] Tasks are saved in the browser so they remain after refreshing the page
+
+### Out of scope for Version 1
+ 
+These are good ideas, but they will wait until later versions:
+ 
+- Projects
+- Calendar and scheduling
+- Dashboard customisation
+- Attachments, notes and subtasks
+- Reminders and notifications
+- User accounts and team features
+
+---
+
+## Tech Stack
+ 
+Version 1 is a simple front-end website:
+ 
+- **HTML** for the structure of the page
+- **CSS** for styling
+- **JavaScript** for the countdown logic and task behaviour
+- **localStorage** (built into the browser) for saving tasks
+
+No back-end or database is needed for Version 1.
+ 
+---
+
+## Running Locally
+ 
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Kasnovitch/orbitwebsite.git
+    ```
+2. Open the project folder:
+    ```bash
+    cd orbitwebsite
+    ```
+3. Open `index.html` in your web browser.
+
+> **Note:** The code is not written yet, so there is nothing to run at the moment. These instructions will work once the first version of the site is added.
+ 
+---
+
+## Roadmap
+ 
+Everything below is the planned direction of Orbit **after** the MVP. These features are not implemented yet and may change as the project grows.
+
+### 1. Countdown System
 
 Countdowns are one of Orbit's central features.
 
-Every task or project with a deadline should have a clear countdown displaying the remaning time.
+Every task or project with a deadline should have a clear countdown displaying the remaining time.
 
 Planned functionality: 
 
@@ -48,33 +137,34 @@ Planned functionality:
 - Upcoming deadline overview
 - Optional countdowns for tasks without fixed deadlines
 
+Example (as of 3 November):
 
-| Task | Deadline | Remaning |
+| Task | Deadline | Remaining |
 |--------|----------|-------------|
 | Finish website | `10 November` | 7 days |
 | Submit homework | `6 November` | 3 days |
 | Launch project | `20 November` | 17 days |
 
-Countdowns should update automatically without requiring manual refreshing.
+Countdowns should update automatically without requiring manual refresh.
 
-## 2. Task Management
+### 2. Task Management
 
 Orbit should provide a complete task management system.
 
 Each task should support:
 
-- Task title.
-- Description.
-- Due date and time.
-- Priority level.
-- Completion status.
-- Associated projects.
-- Categories and labels. 
+- Task title
+- Description
+- Due date and time
+- Priority level
+- Completion status
+- Associated projects
+- Categories and labels 
 - Subtasks and checklists
 - Attachments
 - Notes
 - Creation and modification dates
-- Optional reminders.
+- Optional reminders
 
 Tasks should support different statuses: 
 
@@ -83,21 +173,21 @@ Tasks should support different statuses:
 - In progress
 - On hold
 - Completed
-- cancelled
+- Cancelled
 
-Users should have control over their tasks and be able to organise them accordingly to their own workflow
+Users should have control over their tasks and be able to organise them according to their own workflow.
 
 
-## 3. Project management
+### 3. Project Management
 
-Projects allow users to group related tasks into larget objectives.
+Projects allow users to group related tasks into larger objectives.
 
 Each project should have its own dedicated workspace containing:
 
 - Project name and description
 - Project status
 - Start date
-- Target competion date
+- Target completion date
 - Project countdown
 - Associated tasks
 - Overall completion percentage
@@ -115,18 +205,18 @@ Example:
 - 8 completed
 - 3 in progress
 - 1 remaining
-- 69% overall progress
+- 67% overall progress
 
-## 4. Dashboard
+### 4. Dashboard
 
 The dashboard should act as the main control centre for Orbit.
 
-when opening the application, users should immediately see an overview of their workload.
+When opening the application, users should immediately see an overview of their workload.
 
 Planned dashboard sections:
 
 - Welcome and personalised greeting
-- Cureent date and time
+- Current date and time
 - Active projects
 - Upcoming deadlines
 - Tasks due today
@@ -137,11 +227,11 @@ Planned dashboard sections:
 - Important countdowns
 
 
-the dashboard should be customisable so users have control over what information appears
+The dashboard should be customisable so users have control over what information appears.
 
-## 5. Calendar and Scheduling 
+### 5. Calendar and Scheduling 
 
-Orbit should include a calandar system for viewing tasks and project deadlines
+Orbit should include a calendar system for viewing tasks and project deadlines.
 
 Planned functionality:
 
@@ -149,19 +239,19 @@ Planned functionality:
 - Weekly calendar
 - Daily schedule
 - Task deadline visualisation
-- project milestone tracking
-- drag and drop scheduling 
+- Project milestone tracking
+- Drag and drop scheduling 
 - Calendar filtering
-- upcoming events
-- reminder management
+- Upcoming events
+- Reminder management
 
-Users should be ablke to understand their workload across different periods
+Users should be able to understand their workload across different periods.
 
-## 6. Priorities and Urgency 
+### 6. Priorities and Urgency 
 
-not every task has the same importance 
+Not every task has the same importance. 
 
-Orbit should prvide a priority system to help users distinguish between urgent and less important work.
+Orbit should prOvide a priority system to help users distinguish between urgent and less important work.
 
 Suggested priority levels:
 
@@ -170,74 +260,25 @@ Suggested priority levels:
 | `Critical` | Requires immediate attention |
 | `High` | Important and time sensitive |
 | `Medium` | Should be completed soon |
-| `Low` | Now immediate urgency |
-| `none` | No assigned priority |
+| `Low` | No immediate urgency |
+| `None` | No assigned priority |
 
 Priority levels should be visually distinguishable throughout the application.
 
+*More coming soon...*
 
-# More coming soon...
+---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Completed Features
-
-
-```
-    [*]
-
-
-
-```
+## Completed Features
+ 
+Nothing is completed yet. Features will be ticked off here as they are finished.
+ 
+- [ ] Add a task
+- [ ] Edit a task
+- [ ] Delete a task
+- [ ] Mark a task as complete
+- [ ] Live countdowns
+- [ ] Overdue highlighting
+- [ ] Sort by nearest deadline
+- [ ] Priority levels
+- [ ] Save tasks in the browser
