@@ -1,3 +1,4 @@
+/* Purpose: Style task controls and AngularJS component wrappers; replaces the vanilla-only component layout contract. */
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 39px; padding: 0 14px; border: 1px solid transparent; border-radius: 7px; font-size: 11px; font-weight: 600; cursor: pointer; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
 .button:active { transform: translateY(1px); }
 .button-primary { border-color: #c6b18c; background: #b9a27a; color: #171812; }
@@ -37,3 +38,7 @@
 @media (max-width: 450px) { .task-modal { padding: 20px; } .modal-actions .button { flex: 1; } }
 .row-actions { gap: 2px; }
 .row-menu-button { font-size: 14px; }
+
+[ng-cloak] { display: none !important; }
+orbit-app, orbit-sidebar, orbit-topbar, orbit-welcome, orbit-metrics, task-modal, orbit-toast { display: block; }
+task-panel, upcoming-panel { display: contents; }

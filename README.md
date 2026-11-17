@@ -111,8 +111,6 @@ No back-end or database is needed for Version 1.
     cd orbitwebsite
     ```
 3. Open `index.html` in your web browser.
-
-> **Note:** The code is not written yet, so there is nothing to run at the moment. These instructions will work once the first version of the site is added.
  
 ---
 
@@ -269,9 +267,9 @@ Priority levels should be visually distinguishable throughout the application.
 
 ---
 
-## Completed Features
+## Completed Features and Work Items
  
-Nothing is completed yet. Features will be ticked off here as they are finished.
+Features will be ticked off here as they are finished.
  
 - [ ] Add a task
 - [ ] Edit a task
@@ -282,3 +280,28 @@ Nothing is completed yet. Features will be ticked off here as they are finished.
 - [ ] Sort by nearest deadline
 - [ ] Priority levels
 - [ ] Save tasks in the browser
+
+
+### Migration to Angular
+
+| Vanilla JS concept | AngularJS equivalent | Where it lives now |
+|---|---|---|
+| `localStorage` read/write and validation | `StorageService` using `$window.localStorage` | `js/core/storage.service.js` |
+| Countdown calculation and rendering | `CountdownService` plus the `countdown` filter | `js/core/countdown.service.js`, `js/filters/countdown.filter.js` |
+| `setInterval`, date labels, and countdown refresh | Shared `$interval`-backed `ClockService` | `js/core/clock.service.js` |
+| Task state, CRUD, statistics, and upcoming sorting | `TaskService` | `js/core/task.service.js` |
+| Search, priority/status filtering, and task rows | `task-panel` component with `ng-model`, `ng-class`, and `ng-repeat` | `js/components/task-panel.js` |
+| Upcoming deadline DOM construction | `upcoming-panel` component with `ng-repeat` | `js/components/upcoming-panel.js` |
+| Modal open/close state and task form submission | `ModalService` and `task-modal` component | `js/core/modal.service.js`, `js/components/task-modal.js` |
+| Toast text and timeout | `ToastService` and `orbit-toast` component | `js/core/toast.service.js`, `js/components/orbit-toast.js` |
+| Date formatting | Locale-aware `orbitDate` filter using `Intl.DateTimeFormat` | `js/filters/orbit-date.filter.js` |
+| Manual event listeners and DOM bootstrap | Component bindings, AngularJS directives, and `ng-app` | `js/components/`, `js/app.module.js`, `index.html` |
+
+#### Behavior differences and improvements
+
+- Overdue filtering, row styling, metrics, and countdown labels now update live from the shared clock.
+- Upcoming task countdowns use the same filter as task rows instead of duplicate refresh logic.
+- The unused `includeTime` parameter, countdown `expired` field, `escapeText()`, and local datetime conversion helper were removed.
+- Task removal now uses `splice()` so the service's shared task-array reference remains stable.
+- Storage failures during task completion or deletion remain visible instead of being overwritten by success toasts.
+- Existing task storage key, saved-data validation, task shape, confirmation and validation messages, labels, and aria attributes are retained.
